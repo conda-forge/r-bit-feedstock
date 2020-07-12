@@ -5,7 +5,7 @@ Home: http://ff.r-forge.r-project.org/
 
 Package license: GPL-2
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: True boolean datatype (no NAs),  coercion from and to logicals, integers and integer subscripts;  fast boolean operators and fast summary statistics.  With 'bit' vectors you can store true binary booleans {FALSE,TRUE} at the  expense of 1 bit only, on a 32 bit architecture this means factor 32 less  RAM and ~ factor 32 more speed on boolean operations. Due to overhead of  R calls, actual speed gain depends on the size of the vector: expect gains  for vectors of size > 10000 elements. Even for one-time boolean operations  it can pay-off to convert to bit, the pay-off is obvious, when such  components are used more than once.  Reading from and writing to bit is approximately as fast as accessing  standard logicals - mostly due to R's time for memory allocation. The package  allows to work with pre-allocated memory for return values by calling .Call()  directly: when evaluating the speed of C-access with pre-allocated vector  memory, coping from bit to logical requires only 70% of the time for copying  from logical to logical; and copying from logical to bit comes at a  performance penalty of 150%. the package now contains further classes for  representing logical selections: 'bitwhich' for very skewed selections and  'ri' for selecting ranges of values for chunked processing. All three index  classes can be used for subsetting 'ff' objects (ff-2.1-0 and higher).
 
@@ -15,7 +15,21 @@ Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>Travis</td>
+    <td>
+      <a href="https://travis-ci.com/conda-forge/r-bit-feedstock">
+        <img alt="macOS" src="https://img.shields.io/travis/com/conda-forge/r-bit-feedstock/master.svg?label=macOS">
+      </a>
+    </td>
+  </tr><tr>
+    <td>Drone</td>
+    <td>
+      <a href="https://cloud.drone.io/conda-forge/r-bit-feedstock">
+        <img alt="linux" src="https://img.shields.io/drone/build/conda-forge/r-bit-feedstock/master.svg?label=Linux">
+      </a>
+    </td>
+  </tr>
     
   <tr>
     <td>Azure</td>
@@ -29,6 +43,34 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
+              <td>linux_aarch64_r_base3.6target_platformlinux-aarch64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1003&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-bit-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_r_base3.6target_platformlinux-aarch64" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_r_base4.0target_platformlinux-aarch64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1003&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-bit-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_r_base4.0target_platformlinux-aarch64" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_r_base3.6target_platformlinux-ppc64le</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1003&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-bit-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_r_base3.6target_platformlinux-ppc64le" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_r_base4.0target_platformlinux-ppc64le</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1003&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-bit-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_r_base4.0target_platformlinux-ppc64le" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
               <td>linux_r_base3.6target_platformlinux-64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1003&branchName=master">
@@ -74,12 +116,6 @@ Current build status
           </tbody>
         </table>
       </details>
-    </td>
-  </tr>
-  <tr>
-    <td>Linux_ppc64le</td>
-    <td>
-      <img src="https://img.shields.io/badge/ppc64le-disabled-lightgrey.svg" alt="ppc64le disabled">
     </td>
   </tr>
 </table>
