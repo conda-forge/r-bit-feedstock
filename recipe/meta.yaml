@@ -1,4 +1,4 @@
-{% set version = "4.0.5" %}
+{% set version = "4.5.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/bit_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/bit/bit_{{ version }}.tar.gz
-  sha256: f0f2536a8874b6a30b80baefbc68cb21f0ffbf51f3877bda8038c3f9f354bfbc
+  sha256: 89ddc5e38c2d61718d117a0288828ab61dee93269ca61c609d3e173a85e7cbed
 
 build:
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -42,11 +42,11 @@ test:
 about:
   home: http://ff.r-forge.r-project.org/
   license: GPL-2.0-or-later
-  summary: "True boolean datatype (no NAs),  coercion from and to logicals, integers and integer subscripts;  fast boolean operators and fast summary statistics.  With 'bit' vectors you can store true binary booleans {FALSE,TRUE} at the  expense of 1 bit only, on a 32 bit architecture this means factor 32 less  RAM and ~\
-    \ factor 32 more speed on boolean operations. Due to overhead of  R calls, actual speed gain depends on the size of the vector: expect gains  for vectors of size > 10000 elements. Even for one-time boolean operations  it can pay-off to convert to bit, the pay-off is obvious, when such  components are used more than once.\
-    \  Reading from and writing to bit is approximately as fast as accessing  standard logicals - mostly due to R's time for memory allocation. The package  allows to work with pre-allocated memory for return values by calling .Call()  directly: when evaluating the speed of C-access with pre-allocated vector  memory, coping\
-    \ from bit to logical requires only 70% of the time for copying  from logical to logical; and copying from logical to bit comes at a  performance penalty of 150%. the package now contains further classes for  representing logical selections: 'bitwhich' for very skewed selections and  'ri' for selecting ranges of values\
-    \ for chunked processing. All three index  classes can be used for subsetting 'ff' objects (ff-2.1-0 and higher)."
+  summary: "True boolean datatype (no NAs),  coercion from and to logicals, integers and integer subscripts;  fast boolean operators and fast summary statistics.  With 'bit' vectors you can store true binary booleans {FALSE,TRUE} at the  expense of 1 bit only, on a 32 bit architecture this means factor 32 less  RAM and ~
+    factor 32 more speed on boolean operations. Due to overhead of  R calls, actual speed gain depends on the size of the vector: expect gains  for vectors of size > 10000 elements. Even for one-time boolean operations  it can pay-off to convert to bit, the pay-off is obvious, when such  components are used more than once.\
+    \  Reading from and writing to bit is approximately as fast as accessing  standard logicals - mostly due to R's time for memory allocation. The package  allows to work with pre-allocated memory for return values by calling .Call()  directly: when evaluating the speed of C-access with pre-allocated vector  memory, coping
+    from bit to logical requires only 70% of the time for copying  from logical to logical; and copying from logical to bit comes at a  performance penalty of 150%. the package now contains further classes for  representing logical selections: 'bitwhich' for very skewed selections and  'ri' for selecting ranges of values
+    for chunked processing. All three index  classes can be used for subsetting 'ff' objects (ff-2.1-0 and higher)."
   license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
